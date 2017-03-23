@@ -1,0 +1,162 @@
+<!-----------------------------------------------------
+Author: Artem Tolstov                             
+Date: 3/15/2017                                    
+<------------------------------------------------------>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>3/15/2017 Test</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+    </head>
+    <body>
+        <div>3/15/2017 Coding Test</div>
+        <p>1) In a given array print all the numbers which are not repeated?</p>
+        <!--Go thru array
+                store element
+                    go thru whole array, except for current element
+                    if no matches, print stored number
+            continue thru array
+        -->
+        <p>Array1: <span id="array1"></span> </p>
+        <p>Answer: <span id="answer"></span> </p>
+        <p>Array2: <span id="array2"></span> </p>
+        <p>Answer2: <span id="answer2"></span> </p>
+        <p>Array3: <span id="array3"></span> </p>
+        <p>Answer3: <span id="answer3"></span> </p>
+        <p>Array4: <span id="array4"></span> </p>
+        <p>Answer4: <span id="answer4"></span> </p>
+        <script>
+            var myArray1 = [1, 1, 2, 3, 3, 4, 5, 5, 6, 7, 7, 8, 9, 9, 10];
+            var myArray2 = [2, 7, 2, 1, 4, 7, 9, 0, 45, 43, 67, 4];
+            var myArray3 = [1, 1, 1];
+            var myArray4 = [0, 100, 0];
+            document.getElementById("array1").innerHTML = myArray1;
+            document.getElementById("answer").innerHTML = uniqueNumbers(myArray1);
+
+            document.getElementById("array2").innerHTML = myArray2;
+            document.getElementById("answer2").innerHTML = uniqueNumbers(myArray2);
+
+            document.getElementById("array3").innerHTML = myArray3;
+            document.getElementById("answer3").innerHTML = uniqueNumbers(myArray3);
+
+            document.getElementById("array4").innerHTML = myArray4;
+            document.getElementById("answer4").innerHTML = uniqueNumbers(myArray4);
+
+            function uniqueNumbers(numericArray)
+            {
+                var newArray = [];
+                var unique = true;
+                for (var i = 0; i < numericArray.length; i++)
+                {
+                    unique = true;
+                    for (var k = 0; k < numericArray.length; k++)
+                    {
+                        if ((k !== i) && (numericArray[i] === numericArray[k]))
+                            unique = false;
+                        if (unique === false)
+                            break; //So we don't traverse whole array once we 
+                        //know value is not unique
+                    }
+                    if (unique === true)
+                    {
+                        newArray.push(numericArray[i]);
+                        //document.write(numericArray[i] + ", ");
+                    }
+
+                }
+                return newArray;
+            }
+
+            function removeRepeats(numericArray)
+            {
+                for (var i = 0; i < numericArray.length; i++)
+                {
+                    for (var k = 0; k < numericArray.length; k++)
+                    {
+                        if ((k !== i) && (numericArray[i] === numericArray[k]))
+                            numericArray.splice(i, 1)
+                    }
+                }
+                return numericArray;
+            }
+        </script>
+
+
+        <p>2) Write a program to check if the given number is binary number or not?<br>
+            <!--transform number into a string so it is in an array
+                traverse array 
+                    check if number is not equal to the CHARACTER of 1 or 0
+                    if number isn't equal to either return false, exiting 
+                    immediatley
+                if you have not returned false after traversing whole array, 
+                return true because number is binary-->
+            <span id="question2"></span> is binary: <span id="answer5"></span><br>
+            <span id="sample2"></span> is binary: <span id="answer6"></span><br>
+            <span id="sample3"></span> is binary: <span id="answer7"></span><br>
+        </p>
+
+        <script>
+            var number = 1010101010;
+            var number2 = 100300001;
+            var number3 = 10345;
+            document.getElementById("question2").innerHTML = number;
+            document.getElementById("sample2").innerHTML = number2;
+            document.getElementById("sample3").innerHTML = number3;
+            document.getElementById("answer5").innerHTML = isBinary(number);
+            document.getElementById("answer6").innerHTML = isBinary(number2);
+            document.getElementById("answer7").innerHTML = isBinary(number3);
+
+            function isBinary(number) {
+                var variable = number.toString();
+                for (var i = 0; i < variable.length; i++)
+                {
+                    if ((variable[i] !== "1") && (variable[i] !== "0"))
+                        return false;
+                }
+                return true;
+            }
+        </script>
+
+        <p>3) Given an array A[], write a function that segregates even and odd numbers. The functions should put all even numbers 
+            first, and then odd numbers.<br>
+            Example<br>
+            Input  = {12, 34, 45, 9, 8, 90, 3}<br>
+            Output = {12, 34, 8, 90, 45, 9, 3}</p>
+        
+        <p>Sample: <span id="question3"></span></p>
+        
+        <p>Answer: <span id="answer8"></span></p>
+        <script>
+            var array1 = [12, 34, 45, 9, 8, 90, 3];
+            document.getElementById("question3").innerHTML = array1;
+            document.getElementById("answer8").innerHTML = sortEvenOddOrder(array1);
+            
+            function sortEvenOddOrder(integerArray)
+            {
+                var newArray = [];
+                for(var i = 0; i < integerArray.length; i++)
+                {
+                    if(isEven(integerArray[i]))
+                        newArray.push(integerArray[i]);
+                }
+                for(var i = 0; i < integerArray.length; i++)
+                    if(!isEven(integerArray[i]))
+                        newArray.push(integerArray[i]);
+                return newArray;
+            }
+            function isEven(num) {
+                if(num%2 === 0)
+                    return true
+                return false
+            }
+        </script>
+        <!--
+4) Write a Java program to find the second largest element in an array.
+Example
+
+Input  = {12, 34, 45, 9, 8, 90, 3}
+Output = 9
+        -->
+    </body>
+</html>
