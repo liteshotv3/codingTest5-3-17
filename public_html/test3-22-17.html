@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<!-----------------------------------------------------
+Author: Artem Tolstov                             
+Date: 3/22/2017                                    
+<------------------------------------------------------>
+<html>
+    <head>
+        <title>3/22/2017 Test</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <p>1. Given an array of numbers - every index in output should have the 
+            product of other index numbers.<br>
+
+            eg: i/p: {5,7,10,2}<br>
+            o/p: {140,100,70,350}<br>
+            Array:<span id="array1"></span><br>
+            Output:<span id="answer1"></span>
+
+        </p>
+        <script>
+            var myArray1 = [1, 2, 3, 4];
+
+            document.getElementById("array1").innerHTML = myArray1;
+            document.getElementById("answer1").innerHTML = multiplyOtherElements(myArray1);
+
+            function multiplyOtherElements(numericArray) {
+                /*
+                 * Go thru array
+                 *  for each element go thru the rest of the array and multiply
+                 *  every element storing answer in same index of newArray
+                 * return newArray
+                 */
+                var newArray = [];
+                for (var i = 0; i < numericArray.length; i++)
+                {
+                    var product = 1;
+                    for (var k = 0; k < numericArray.length; k++)
+                    {
+                        if (k !== i)
+                            product = numericArray[k] * product;
+                    }
+                    newArray[i] = product;
+                }
+                return newArray;
+            }
+
+        </script>
+        <p>
+            2. Find highest occurred character in a String?<br>
+            eg: abbcbuhkjashbb <br>
+            o/p: b <br>
+            <br>
+            String: <span id="string2"></span><br>
+            Output <span id="answer2"></span>
+        </p>
+        <script>
+            var myString = "abbcbuhkjashbb";
+            document.getElementById("string2").innerHTML = myString;
+            document.getElementById("answer2").innerHTML = highestOccuringChar(myString);
+            /*
+             * create a highest Occuring character variable called currentCount
+             *  and currentCharacter
+             * go thru array
+             *  for each element go thru array counting number of times
+             *  character occurs
+             *  check if number is greater than current value of highestOccuringCharacter
+             * return highestOccuringCharacter
+             */
+            function highestOccuringChar(aString)
+            {
+                var currentCount = 0;
+                var currentChar;
+                for (var i = 0; i < aString.length; i++)
+                {
+                    var newCount = 0;
+                    for (var k = 0; k < aString.length; k++)
+                    {
+                        if (aString[i] === aString[k])
+                            newCount++;
+                    }
+                    if (newCount > currentCount)
+                    {
+                        currentCount = newCount;
+                        currentChar = aString[i];
+                    }
+                }
+                return currentChar;
+            }
+        </script>
+        <p>
+            3. How to find all permutations of String?<br>
+            for example,input is "xyz" then it should print "xyz", "yzx", "zxy",
+            "xzy", "yxz", "zyx".<br>
+            <br>
+            String: <span id = "string3"></span><br>
+            Output <span id = "answer3"></span>
+        </p>
+        <script>
+            var randomString = "wxyz";
+            
+            document.getElementById("string3").innerHTML = randomString;
+            document.getElementById("answer3").innerHTML = allPermutations(string3);
+            /*
+             * 
+             */
+            function allPermutations(anyString)
+            {
+                for(var i = 0; i < anyString.length; i++)
+                {
+                    
+                }
+                return 0;
+            }
+        </script>
+        <p>
+            4. In an integer array, there is 1 to 100 number, out of one is 
+            duplicate, how to find that duplicate number?<br>
+            <br>
+            String: <span id="intArray4"></span><br>
+            Output <span id="answer4"></span>
+        </p>
+        <script>
+            var intArray4 = [];
+            for (var i = 1; i < 101; i++)
+            {
+                intArray4.push(i);
+            }
+            //put in a random number in a random location;
+            intArray4[getRandomInt(0, 99)] = getRandomInt(1, 100);
+            
+            document.getElementById("intArray4").innerHTML = intArray4;
+            document.getElementById("answer4").innerHTML = duplicateElement(intArray4);
+
+            function duplicateElement(anIntArray)
+            {
+                for (var i = 0; i < anIntArray.length; i++)
+                {
+                    for (var k = 0; k < anIntArray.length; k++)
+                    {
+                        if ((anIntArray[i] === anIntArray[k]) && (i !== k))
+                            return anIntArray[k]
+                    }
+                }
+            }
+            
+            //getRandomInt is taken from https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+            function getRandomInt(min, max) {
+                min = Math.ceil(min);
+                max = Math.floor(max);
+                return Math.floor(Math.random() * (max - min)) + min;
+            }
+        </script>
+    </body>
+</html>
