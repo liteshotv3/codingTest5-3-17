@@ -50,6 +50,18 @@ console.log(s1);
 console.log(s2);
 console.log(isAnagram(s1, s2));
 
+var s1 = "c";
+var s2 = "cccccccc";
+console.log(s1 + " and " + s2 + " are anagrams:" + isAnagram(s1,s2));
+
+var s1 = "cccccccc";
+var s2 = "ccc";
+console.log(s1 + " and " + s2 + " are anagrams:" + isAnagram(s1,s2));
+
+var s1 = "race car";
+var s2 = "car race";
+console.log(s1 + " and " + s2 + " are anagrams:" + isAnagram(s1,s2));
+
 
 function isAnagram(string1, string2)
 {
