@@ -20,9 +20,15 @@
                 I/P = [10, 2, 3, 2, 3,45, 10, 3, 3, 45, 45]<br>
                 O/P = 45
                 <br>
-                <button type="button" onclick="oddOccuringElement(arr1)">
+                <button type="button" 
+                        onclick="console.log(arr1),
+                                    console.log('In the preceeding array,' +
+                                            ' the following element occurs' +
+                                            ' an odd number of times'),
+                                    console.log(oddOccuringElement(arr1))">
                     Execute in console
                 </button>
+                <script src="5-10-17javascript/oddOccuringElement.js"></script>
             </p>
 
             <p>
@@ -40,8 +46,9 @@
                 (30, 40)<br>
                 (5, 10) <br>
                 <button type="button" onclick="console.log(...arr2),
-                            console.log('Following symmetric pairs in array'),
-                            console.log(...findSymmetricPairs(arr2))">
+                                    console.log('Following symmetric pairs in' +
+                                                ' array'),
+                                    console.log(...findSymmetricPairs(arr2))">
                     Execute in Console 
                 </button>
                 <script src='5-10-17javascript/findSymmetricPairs.js'></script>
@@ -63,7 +70,8 @@
                 <br>
                 Input: {0, 1, 2, 3, 4, 5, 6, 7, 10}, n = 9, m = 11<br>
                 Output: 8<br>
-                <button type="button" onclick="executeAll()">Execute in Console</button>
+                <button type="button" 
+                        onclick="executeAll()">Execute in Console</button>
                 <script src="5-10-17javascript/findSmallestMissing.js"></script>
             </p>
             <p>
@@ -74,7 +82,9 @@
                 Example:<br>
                 Input:  arr = [<span id="sample4"></span>]<br>
                 Output: <span id="answer4"></span><br>
-                <button type="button" onclick="console.log('The 2 smallest elements in the array are:'), console.log(findTwoSmallest(arr))">Execute in Console</button>
+                <button type="button" onclick="console.log('The 2 smallest' + 
+                            ' elements in the array are:'), 
+                    console.log(findTwoSmallest(arr))">Execute in Console</button>
                 <script src="5-10-17javascript/findTwoSmallest.js"></script>
             </p>
         </div>
