@@ -5,11 +5,11 @@
  *         Example:                                                            *
  *          I/P = [10, 2, 3, 2, 3,45, 10, 3, 3, 45, 45]                        *
  *          O/P = 45                                                           *
- *Method:  Set our answer to 0                                                 *
- *         traverse the array setting the value of answer to the               *
+ *Method:  Set our ANSWER to 0                                                 *
+ *         traverse the array setting the value of ANSWER to the               *
  *         bitwise exclusive or (bitwise XOR) of answer and the current element*
  *         ie: answer ^ array[i]                                               *
- *         return answer                                                       *
+ *         return ANSWER                                                       *
  *                                                                             *
  *         When XOR compares to itself( 5^5) it results in 0, since we have an *
  *         array with an even number of elements eventually they will all      *
