@@ -36,8 +36,8 @@ function longestSubstring(string) {
     {
         for (var j = i; j < string.length; j++)
         {
-//            console.log("tempString: " + tempString + " string[j]: " + string[j]);
-//            console.log(" isNotRepeat: " + isNotRepeatChar(tempString, string[j]));
+            console.log("tempString: " + tempString + " string[j]: " + string[j]);
+            console.log(" isNotRepeat: " + isNotRepeatChar(tempString, string[j]));
             if (isNotRepeatChar(tempString, string[j])) {
                 tempString = tempString + string[j];
                 //tempString.push(string[j]);
