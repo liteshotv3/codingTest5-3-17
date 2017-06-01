@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>5/31/17 Coding Test</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+    </head>
+    <body>
+        <ol>
+            <li>
+                <p>Determine if words in the sentence are palindrome or not.</p> 
+                <script src="5-31-17javascript/palindromeInSentence.js"></script>
+                <script>
+                    var someString = "An example of a palindrome is racecar and hannah";
+                </script>
+                <button onclick="
+                        console.log(someString);
+                        console.log(palindromeInSentence(someString))"
+                    >palindromeInSentence</button>
+            </li>
+            <li>
+                <p>
+                    How to find common elements in three sorted arrays.<br>
+                    Example:<br>
+                    input1 = [1, 5, 10, 20, 40, 80]<br>
+                    input2 = [6, 7, 20, 80, 100]<br>
+                    input3 = [3, 4, 15, 20, 30, 70, 80, 120]<br>
+                    Output: 20, 80<br>
+                </p>
+                <script src="5-31-17javascript/commonElements.js"></script>
+                <script>
+                    var input1 = [1, 5, 10, 20, 40, 80];
+                    var input2 = [6, 7, 20, 80, 100, 1];
+                    var input3 = [3, 4, 15, 20, 30, 1, 70, 80, 120];
+                </script>
+                <button onclick="
+                        console.log(input1);
+                        console.log(input2);
+                        console.log(input3);
+                        console.log('common elements of above arrays are: ')
+                        console.log(commonElements(input1, input2, input3))">commonElements</button>
+            </li>
+            <li>
+                <p>How to find if there is a sub array with sum equal to zero?<br>
+                    Examples<br>
+                    Input: [4, 2, -3, 1, 6]<br>
+                    Output: true<br>
+                    There is a sub-array with zero sum from index 1 to 3.
+                </p>
+                <script src="5-31-17javascript/subArray0.js"></script>
+                <script>
+                    var array3 = [4, 2, -3, 1, 6];
+                    var array4 = [4, 6, 2, -3, 1];
+                    var array5 = [1, 2, 3, 0, 5];
+                    var array6 = [5, 4, 2, 1];
+                    var array7 = [1, 2, 3, 4, 5, -15];
+                </script>
+                <button onClick="
+                        console.log(array3);
+                        console.log(subArray0(array3));
+                        console.log(array4);
+                        console.log(subArray0(array4));
+                        console.log(array5);
+                        console.log(subArray0(array5));
+                        console.log(array6);
+                        console.log(subArray0(array6))
+                        console.log(array7);
+                        console.log(subArray0(array7))">subArray0</button>
+            </li>
+        </ol>
+        <p>Buttons output answers to console (F12 in chrome)<br>
+    </body>
+</html>
