@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>TODO write content</div>
+        <script>
+            console.log("HI");
+            var bar = true;
+            console.log(bar);
+            console.log(bar + "xyz");
+            console.log(bar+true);
+            console.log(bar+false);
+            
+            if("0"){
+                console.log("its true");
+            } else {
+                console.log("its false");
+            }
+            console.log(-'34' + 10);
+            var x = {};
+            console.log('hi');
+            console.log(typeof x)
+            console.log(typeof x === 'object');
+            
+//            var output = (function(x){
+//                delete x;
+//                return x;
+//            })(3);
+//
+//            console.log(output);
+            
+            var x = {foo:1};
+            var output = (function() {
+                delete x.foo;
+                return x.foo;
+            })();
+            console.log(output);
+            
+            var variabe1 = 12;
+            console.log(variabe1);
+            console.log(variable2);
+            var variable2 = 3;
+            
+            var text = 'outside';
+            console.log(text);
+            function loglt()
+            {
+                console.log(text);
+                var text = "inside";
+            }
+            console.log(loglt());
+            
+            
+        </script>
+    </body>
+</html>
