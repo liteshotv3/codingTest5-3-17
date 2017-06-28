@@ -84,32 +84,69 @@ and open the template in the editor.
              *  arrayHalf1 will be [1,2,3]
              *  arrayHalf2 will be [4,5,6]
              */
+            
+            //use mergeSort( <comparablearray>, <optional - "trace">)
+            //if second parameter is set to true, mergeSort will 
+            //print what it is doing
             var myArray = [38, 27, 43, 3, 9, 82, 10];
-            //console.log("myArray = [" + myArray + "]");
+            var myArray2 = [4, 1, 3, 2];
+            console.log("sorted: " + mergeSort(myArray2, "trace"));
+            console.log("myArray = " + myArray);
             console.log("sorted: " + mergeSort(myArray));
-
-            function mergeSort(array)
+            function mergeSort(array, showConsole)
             {
-                if (array.length > 1) {
-                    console.log("mergeSorting: [" + array + "]");
+                var firstHalf, secondHalf;
+                var trace;
+                if (showConsole === "trace") {
+                    trace = true;
+                } else {
+                    trace = false;
+                }
+
+                //checks if array is sorted, an array of length 1 is considered 
+                //sorted
+                if (isSorted(array)) {
+                    if (trace)
+                        console.log("isSorted: [" + array + "]");
+                    return array;
+                } else {
+                    if (trace)
+                        console.log("mergeSorting: [" + array + "]");
                     firstHalf = array.slice(0, Math.floor(array.length / 2));
                     secondHalf = array.slice(Math.floor(array.length / 2));
-                    console.log("splitting into [" + firstHalf + "] and [" + secondHalf + "]");
-                    return merge(mergeSort(firstHalf), mergeSort(secondHalf));
-                } else
-                    return array;
+                    if (trace)
+                        console.log("splitting into [" + firstHalf + "] and [" + secondHalf + "]");
+                    //console.log("initiating firstHalf recursive mergeSort");
+                    firstHalf = mergeSort(firstHalf, trace);
+                    //console.log("initiating secondHalf recursive mergeSort");
+                    secondHalf = mergeSort(secondHalf, trace);
+                    return merge(firstHalf, secondHalf);
+                }
+
 
                 function merge(array1, array2)
                 {
                     var mergedArray = [];
                     while (array1.length > 0 || array2.length > 0)
                     {
+                        if (trace)
+                            console.log("merging - left: [" + array1 + "] right: [" + array2 + "]" + " mergedArray: [" + mergedArray + "]");
                         if (array1[0] > array2[0] || (typeof (array1[0]) === "undefined"))
                             mergedArray.push(array2.shift());
                         else if (array2[0] > array1[0] || (typeof (array2[0]) === "undefined"))
                             mergedArray.push(array1.shift());
                     }
+                    if (trace)
+                        console.log("merge() created: [" + mergedArray + "] going up a layer");
                     return mergedArray;
+                }
+
+                function isSorted(array) {
+                    for (var i = 0; i < array.length - 1; i++) {
+                        if (array[i] > array[i + 1])
+                            return false;
+                    }
+                    return true;
                 }
 //    else {
 //        firstHalf = array.slice(0, Math.floor(array.length/2));
