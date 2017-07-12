@@ -15,6 +15,7 @@ var unSorted = [64, 25, 12, 22, 11];
 //console.log("answer: " + selectionSort(unSorted));
 function selectionSort(array)
 {
+    console.log(array);
     for (var i = 0; i < array.length; i++)
     {
 

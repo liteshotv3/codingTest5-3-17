@@ -23,8 +23,8 @@ concatenate less than, pivot, greater than and return
 
 Artem Tolstov 6/26/17
 */
-unsortedArray = [3, 1, 0, 5, 11, 6, 9, 2, 8];
-console.log(quickSort(unsortedArray));
+//unsortedArray = [3, 1, 0, 5, 11, 6, 9, 2, 8];
+//console.log(quickSort(unsortedArray));
 
 function quickSort(array) {
   var pivot = array[0];
