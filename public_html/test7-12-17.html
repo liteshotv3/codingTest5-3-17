@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title></title>
+    </head>
+
+    <body>
+        <h2>Today's Coding Test (7/12/2017)</h2>
+        <p>Answers appear in console</p>
+        <p>
+            1) array = [a,b,c,d,d,e,a,b,c,f,g,h,h,h,e,a];<br>
+            How can I count how many a,b,c are there in the array? I want to have a result like:<br>
+            <br>
+            a = 3<br>
+            b = 1<br>
+            c = 2<br>
+            d = 2<br>
+            <script src="7-12-17javascript/countChars.js"></script>
+            <button onclick="console.log(['a', 'a', 'a', 'b', 'c', 'd', 'd', 'e', 'a', 'b', 'c', 'f', 'g', 'h', 'h', 'h', 'e', 'a']);
+                             countChars(['a', 'a', 'a', 'b', 'c', 'd', 'd', 'e', 'a', 'b', 'c', 'f', 'g', 'h', 'h', 'h', 'e', 'a']);">countChars(array);</button>
+        </p>
+
+        <p>
+            2) How to count duplicate words in array and add a count number to each word?<br>
+
+            My goal is to turn<br>
+            <br>
+            ['hi', 'hello', 'hi','world','hi'] <br>
+            into<br>
+            <br>
+            'hi', 'hello', 'hi(1)','world','hi(2)'<br>
+            <script src="7-12-17javascript/countAppend.js"></script>
+            <button onclick="console.log(countAppend(['hi', 'hello', 'hi', 'world', 'hi', 'hello', 'hello']))">countAppend(['hi', 'hello', 'hi', 'world', 'hi', 'hello', 'hello'])</button>
+        </p>
+    </body>
+</html>

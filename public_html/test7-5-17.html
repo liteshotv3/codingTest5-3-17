@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>7/5/17 Test</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h2>Today (QA/UI) Coding test (7/5/2017)</h2>
+        <p>Q1) Find indivdual numbers and their count in given number:<br>
+            eg: 4567887<br>
+            o/p: <br>
+            4-1<br>
+            5-1<br>
+            6-1<br>
+            7-2<br>
+            8-2<br>
+            <script>
+                var myNum = 4567887;
+                answers = numCount(myNum);
+                for (var i = 0; i < 10; i++)
+                {
+                    if (answers[i])
+                        console.log(i + " : " + answers[i]);
+                }
+                
+                function numCount(num) {
+                    var answer = [];
+                    while (num > 0) {
+                        var current = num % 10;
+                        num = Math.floor(num / 10);
+                        if (answer[current])
+                            answer[current]++;
+                        else
+                            answer[current] = 1;
+                    }
+                    return answer;
+                }
+            </script>
+        </p>
+
+        <p>
+            Q2) Implement BubbleSort Algorithm
+            <script>
+                function bubbleSort(array) {
+                    var count = 0;
+                    var loopAgain = true;
+                    var j = 0;
+                    while (loopAgain)
+                    {
+                        loopAgain = false;
+                        for (var i = 0; i < array.length - 1 - j; i++)
+                        {
+                            count++;
+                            console.log(count + ". Checking index " + i + " and " + (i + 1));
+                            if (array[i] > array[i + 1])
+                            {
+                                count++;
+                                console.log(count + ". swapping from " + array + swap(i) + "to " + array);
+                                //swap(i);
+                                //console.log(count + ". " + array);
+                                loopAgain = true;
+                                if (!loopAgain)
+                                    console.log("sorted Array");
+                            }
+                        }
+                        j++;
+                    }
+                    return array;
+
+                    function swap(index)
+                    {
+                        var temp = array[index];
+                        array[index] = array[index + 1];
+                        array[index + 1] = temp;
+                        return " ";
+                }
+            </script>
+        </p>
+        <p>
+            Q3) Implement LinearSearch and Binary Search Algorithm
+        </p>
+        Please Send Answers to training@whitebox-learning.com
+    </body>
+</html>
