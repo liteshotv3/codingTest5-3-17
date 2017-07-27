@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>7/26/17 Coding Test</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h2>
+            Today Coding Test (UI) (7/26/2017)
+        </h2>
+        <ol>
+            <li>
+                Write a JavaScript program for String is Palindrome or Not depdending on the Input string.
+                <script src="7-26-17javascript/isPalindrome.js"></script>
+                <br>
+                <button onclick="console.log(isPalindrome('racecar'))">
+                    console.log(isPalindrome('racecar'))
+                </button>
+                <br>
+                <button onclick="console.log(isPalindrome('hello'))">
+                    console.log(isPalindrome('hello'))
+                </button>
+            </li>
+            <li>
+                Write a JavaScript program for remove numbers from String.
+                <script src="7-26-17javascript/removeNumbersFromString.js"></script>
+                <br>
+                <button onclick="console.log(removeNumbers('1In 3bri45ght4est 7 day, i12n bl8709ack65est night34'))">
+                    console.log(removeNumbers('1In 3bri45ght4est 7 day, i12n bl8709ack65est night34'))
+                </button>
+            </li>
+            <li>
+                How to implement stack in JavaScript.
+                <script>
+                    var stack = [];
+                    stack.isEmpty=function(){
+                        if(stack.length === 0)
+                            return true;
+                        else return false;
+                    };
+                    stack.peek = function(){
+                        return stack[stack.length-1];
+                    };
+                    stack.isFull = function(){
+                        if(stack.length >= 5)
+                            return true;
+                        else return false;
+                    };
+//                    console.log("isEmpty returns",stack.isEmpty());
+//                    console.log("pop() returns",stack.pop());
+//                    console.log("push(5) returns", stack.push(5));
+//                    console.log("push(5) returns", stack.push(5));
+//                    console.log("push(5) returns", stack.push(5));
+//                    console.log("push(5) returns", stack.push(5));
+//                    console.log("isFull() returns",stack.isFull());
+//                    console.log(stack);
+                    
+
+//                    var stacks = true;
+//                    var stack = (function (array) {
+//                        array = [];
+//                        var max = 5;
+//                        function empty() {
+//                            if (array.length < 1)
+//                                console.log("stach is empty");
+//                        }
+//                        ;
+//                        return{
+//                            push: function (ele) {
+//                                if (array.length < max) {
+//                                    array.push(ele);
+//                                    return array;
+//                                } else {
+//                                    console.log("stack is overflow");
+//                                }
+//                            },
+//                            pop: function () {
+//                                if (array.length > 1) {
+//                                    array.pop();
+//                                    return array;
+//                                } else {
+//                                    console.log("Stack is underflow");
+//                                }
+//                            }
+//                        }
+//                    })()
+//                    if (stacks) {
+//                        console.log(stack.push(2));
+//
+//                        console.log(stack.push(5));
+//                        console.log(stack.push(8));
+//                        console.log(stack.push(10));
+//                        console.log(stack.push(15));
+//                        console.log(stack.push(19));
+//                    }
+                </script>
+            </li>
+        </ol>
+    </body>
+</html>
